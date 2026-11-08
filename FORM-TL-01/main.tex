@@ -1,0 +1,102 @@
+\documentclass[10pt,letterpaper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\IfFileExists{spanish.ldf}{\usepackage[spanish,es-noshorthands]{babel}}{\typeout{Sin babel-spanish: se compila sin particion de palabras en espanol}}
+\usepackage[margin=1.4cm]{geometry}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\definecolor{hdr}{HTML}{DCE6F1}
+\hypersetup{colorlinks=true,urlcolor=blue!60!black,linkcolor=black,pdftitle={FORM-TL-01: Taller de tipos de requisitos},pdfauthor={Basurto Jordan}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\LTpre}{4pt}\setlength{\LTpost}{6pt}
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small FORM-TL-01 \textperiodcentered{} ISR-401 Ingenier\'ia de Requerimientos}
+\rhead{\small Basurto Jordan}
+\cfoot{\small P\'agina \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\begin{document}
+
+{\LARGE\bfseries FORM-TL-01: Taller de tipos de requisitos}\\[2pt]
+{\large Ingenier\'ia de Requerimientos (ISR-401) \textperiodcentered{} Plataforma de gesti\'on de citas m\'edicas}
+
+\medskip
+\begin{tabular}{@{}ll}
+\textbf{Estudiante:} & Basurto Jordan\\
+\textbf{Compa\~nero de contraste:} & Jonathan Holgu\'in\\
+\textbf{Asignatura:} & Ingenier\'ia de Requerimientos (ISR-401), 4.\textordmasculine{} nivel\\
+\textbf{Universidad:} & Universidad T\'ecnica Estatal de Quevedo (UTEQ)\\
+\textbf{Fecha:} & 7 de noviembre de 2026\\
+\textbf{Repositorio:} & \url{https://github.com/EleSteven777/ISR401-BasurtoJordan}\\
+\end{tabular}
+
+\section*{1. Clasificaci\'on de los 20 enunciados}
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.25cm}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{8.5cm}}
+\rowcolor{hdr}\textbf{Código} & \textbf{Enunciado} & \textbf{Tipo (funcional / calidad / restricción)} & \textbf{Característica ISO/IEC 25010:2023 (si es de calidad)} & \textbf{Producto o proceso} & \textbf{Sistema o software} & \textbf{Justificación} \\ \hline
+\endfirsthead
+\rowcolor{hdr}\textbf{Código} & \textbf{Enunciado} & \textbf{Tipo (funcional / calidad / restricción)} & \textbf{Característica ISO/IEC 25010:2023 (si es de calidad)} & \textbf{Producto o proceso} & \textbf{Sistema o software} & \textbf{Justificación} \\ \hline
+\endhead
+E01 & El paciente podrá reservar una cita eligiendo especialidad, médico, fecha y hora entre los horarios disponibles. & Funcional & --- & Producto & Software & Es funcional porque describe un servicio que va a ofrecer la plataforma. \\ \hline
+E02 & La plataforma enviará al paciente un recordatorio por mensaje de texto 24 horas antes de su cita. & Funcional & --- & Producto & Sistema & Es funcional porque es un servicio que el sistema realizará. \\ \hline
+E03 & La aplicación debe ser rápida. & Calidad & Eficiencia de desempeño (performance efficiency); comportamiento temporal (time behaviour) & Producto & Software & Es de calidad (Performance efficiency, time behaviour) porque mide tiempo de respuesta, no describe lo que hace la aplicación. \\ \hline
+E04 & El recepcionista podrá registrar la llegada del paciente que se acerca a la ventanilla. & Funcional & --- & Producto & Sistema & Es funcional porque es una acción que el sistema ofrece y es de sistema porque intervienen elementos externos al software (recepcionista y paciente). \\ \hline
+E05 & La plataforma se desarrollará en Java 21 con base de datos PostgreSQL, tecnologías que domina el área de TI. & Restricción & --- & Producto & Software & Es restricción porque ya indica cómo se va a desarrollar (Java 21, BD PostgreSQL), y eso es una restricción y no una función o una cualidad. \\ \hline
+E06 & El médico podrá consultar la lista de pacientes del día y marcar cada consulta como atendida. & Funcional & --- & Producto & Software & Es funcional porque describe dos servicios (consultar la lista de pacientes del día, marcar consulta como atendida) que va a ofrecer la plataforma. \\ \hline
+E07 & Los datos de salud de los pacientes deben estar seguros. & Calidad & Seguridad (security); confidencialidad (confidentiality) & Producto & Software & Es de calidad (Seguridad [Security], confidencialidad [confidentiality]) porque exige que solo las personas autorizadas tengan acceso a los datos de salud de los pacientes, y no describe una función del sistema. \\ \hline
+E08 & La aplicación móvil debe funcionar en teléfonos con Android 10 o superior. & Restricción & --- & Producto & Sistema & Es restricción porque impone una condición de entorno ya decidida (teléfonos con Android 10 o superior) que limita dónde debe funcionar la aplicación, y no describe una función ni una cualidad medible. Es de sistema porque interviene un dispositivo físico, el teléfono, además del programa. \\ \hline
+E09 & Una cita cancelada con menos de cuatro horas de anticipación se registrará como inasistencia. & Funcional & --- & Producto & Software & Es funcional porque, si una cita se cancela con menos de 4 horas de anticipación, el sistema la registra como inasistencia, es decir, un comportamiento que la plataforma ejecuta. \\ \hline
+E10 & La plataforma debe ser fácil de usar para los pacientes adultos mayores. & Calidad & Capacidad de interacción (interaction capability); operabilidad (operability) & Producto & Software & Es de calidad (capacidad de interacción, operabilidad) porque evalúa qué tan fácilmente los adultos mayores pueden manejar la interfaz y completar una reserva. \\ \hline
+E11 & El proyecto debe entregarse en un plazo máximo de seis meses. & Restricción & --- & Proceso & Sistema & Es restricción porque es una condición impuesta que limita el proyecto, no describe calidad ni funcionalidad. Es de proceso porque regula el trabajo de desarrollo. Es de sistema porque abarca todo el sistema terminado. \\ \hline
+E12 & La sesión de un usuario se cerrará automáticamente tras 10 minutos sin actividad. & Funcional & --- & Producto & Software & Es funcional porque, cuando pasan 10 minutos sin actividad en la sesión de un usuario, esta se cerrará automáticamente; el sistema implementa una función, es decir, un comportamiento que la plataforma ejecuta. \\ \hline
+E13 & El quiosco de la sala de espera leerá el número de cédula ingresado en su pantalla táctil e imprimirá un ticket con el número de turno. & Funcional & --- & Producto & Sistema & Es funcional porque el paciente ingresará su número de cédula en la pantalla táctil y el quiosco imprimirá un ticket con el número de turno, una acción que la plataforma ejecutará. Es de sistema porque intervienen dispositivos físicos externos al software (quiosco, pantalla táctil e impresora). \\ \hline
+E14 & La plataforma debe estar siempre disponible. & Calidad & Fiabilidad (reliability); disponibilidad (availability) & Producto & Sistema & Es de calidad (Fiabilidad [Reliability], disponibilidad [availability]) porque mide que la plataforma esté operativa y se pueda usar cuando los usuarios la necesitan, sin caídas, y no describe lo que hace. Es de producto porque describe una cualidad de la plataforma ya entregada y en uso, y no regula el trabajo de construirla. Es de sistema porque para estar siempre disponible no basta el programa: también debe funcionar la infraestructura donde corre, como el servidor y la red. \\ \hline
+E15 & El director médico podrá generar un reporte mensual de inasistencias por especialidad. & Funcional & --- & Producto & Software & Es funcional porque el director médico podrá obtener un reporte mensual de inasistencias por especialidad, un servicio que la plataforma ofrece. Es de software porque todo lo que pide el enunciado ocurre dentro de la plataforma, sin dispositivos externos. \\ \hline
+E16 & Cada incremento se validará con el director médico al final de cada iteración de dos semanas. & Restricción & --- & Proceso & Sistema & Es restricción porque fija un método de trabajo y su frecuencia (validar cada incremento con el director médico al final de cada iteración de dos semanas), una decisión impuesta que no describe una función ni una cualidad. Es de proceso porque regula cómo se trabaja en el proyecto, no cómo se comporta la plataforma entregada. Es de sistema porque involucra al director médico y al equipo de desarrollo. \\ \hline
+E17 & El tratamiento de los datos personales de los pacientes debe cumplir la Ley Orgánica de Protección de Datos Personales del Ecuador. & Restricción & --- & Producto & Sistema & Es de sistema porque el cumplimiento legal abarca todo el tratamiento de datos personales y a las personas y procesos que intervienen, no solo el programa. \\ \hline
+E18 & La plataforma debe integrarse sin problemas con el sistema de facturación actual. & Calidad & Compatibilidad (compatibility); interoperabilidad (interoperability) & Producto & Sistema & Es de calidad (Compatibilidad [Compatibility], interoperabilidad [interoperability]) porque mide qué tan bien la plataforma intercambia información con el sistema de facturación actual, y no describe una función nueva (la emisión de facturas queda fuera del alcance). Es de producto porque describe una cualidad de la plataforma entregada. Es de sistema porque interviene otro sistema, el de facturación, además de la plataforma. \\ \hline
+E19 & Si el servidor principal falla, la plataforma debe restablecer el servicio en menos de 30 minutos sin perder ninguna cita confirmada. & Calidad & Fiabilidad (reliability); recuperabilidad (recoverability) & Producto & Sistema & Es de calidad (Fiabilidad [Reliability], recuperabilidad [recoverability]) porque mide que, tras una falla del servidor principal, el servicio se restablezca en menos de 30 minutos sin perder citas confirmadas, y no describe lo que hace. Es de producto porque describe una cualidad de la plataforma entregada y en uso. Es de sistema porque interviene el servidor, además del programa. \\ \hline
+E20 & Todo cambio en el código fuente será revisado por otro integrante del equipo antes de integrarse a la rama principal. & Restricción & --- & Proceso & Sistema & Es restricción porque fija un método de trabajo impuesto (revisión por otro integrante antes de integrar a la rama principal), y no describe una función ni una cualidad. Es de proceso porque regula cómo se trabaja en el proyecto, no cómo se comporta la plataforma entregada. Es de sistema porque involucra a las personas del equipo de desarrollo. \\ \hline
+\end{longtable}
+\endgroup
+\section*{2. Los 5 requisitos de calidad vagos, cuantificados}
+Cada fila: código del enunciado vago, métrica, unidad, umbral y condición verificables. Apóyate en los datos del caso (300 usuarios simultáneos el lunes a las 07:00, Android de gama media o baja, 35 \% de pacientes mayores de 60 años, 450 citas diarias).
+
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.25cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{6.0cm}}
+\rowcolor{hdr}\textbf{Código} & \textbf{Enunciado vago original} & \textbf{Característica ISO/IEC 25010:2023} & \textbf{Métrica} & \textbf{Unidad} & \textbf{Umbral y condición} & \textbf{Requisito reescrito (verificable)} \\ \hline
+\endfirsthead
+\rowcolor{hdr}\textbf{Código} & \textbf{Enunciado vago original} & \textbf{Característica ISO/IEC 25010:2023} & \textbf{Métrica} & \textbf{Unidad} & \textbf{Umbral y condición} & \textbf{Requisito reescrito (verificable)} \\ \hline
+\endhead
+E03 & La aplicación debe ser rápida. & Eficiencia de desempeño (performance efficiency); comportamiento temporal (time behaviour) & Percentil 95 del tiempo de respuesta de al menos 1.000 operaciones principales. & Segundos (s) & $\leq$ 2 s; ejecutar al menos 1.000 operaciones con 300 usuarios simultáneos el lunes a las 07:00, en Android de gama media o baja. & Durante una prueba de al menos 1.000 operaciones principales (iniciar sesión, consultar horarios y reservar una cita), con 300 usuarios simultáneos el lunes a las 07:00, al menos el 95 \% deberá responder en 2 segundos o menos en teléfonos Android de gama media o baja. \\ \hline
+E07 & Los datos de salud de los pacientes deben estar seguros. & Seguridad (security); confidencialidad (confidentiality) & Número de intentos de acceso no autorizado que llegan a mostrar datos de salud. & Intentos & 0 de 30 intentos; probar perfiles y roles sin permiso, con datos ficticios. & La plataforma deberá impedir que usuarios sin autorización consulten datos de salud. En 30 intentos de acceso no autorizado, realizados con perfiles y roles sin permiso y datos ficticios, ningún intento deberá mostrar información de salud. \\ \hline
+E10 & La plataforma debe ser fácil de usar para los pacientes adultos mayores. & Capacidad de interacción (interaction capability); operabilidad (operability) & Porcentaje de participantes mayores de 60 años que completan una reserva sin ayuda en $\leq$ 3 min. & Porcentaje (\%) y minutos (min) & 20 participantes, todos mayores de 60 años; al menos 18 (90 \%) completan la reserva sin ayuda en $\leq$ 3 min. El 35 \% describe la población del policlínico, no la muestra. & En una prueba con 20 participantes mayores de 60 años, al menos 18 (90 \%) deberán completar una reserva sin ayuda en $\leq$ 3 minutos, usando Android de gama media o baja. \\ \hline
+E14 & La plataforma debe estar siempre disponible. & Fiabilidad (reliability); disponibilidad (availability) & Porcentaje de disponibilidad mensual: (minutos en servicio $\div$ minutos totales del mes) $\times$ 100. & Porcentaje (\%) & $\geq$ 99,9 \% mensual, durante las 24 horas del día y los 7 días de la semana; se incluye el mantenimiento programado. & La plataforma deberá mantener una disponibilidad mensual igual o superior al 99,9 \%, las 24 horas del día y los 7 días de la semana, considerando una demanda de hasta 450 citas diarias. El cálculo incluirá las ventanas de mantenimiento programado. \\ \hline
+E18 & La plataforma debe integrarse sin problemas con el sistema de facturación actual. & Compatibilidad (compatibility); interoperabilidad (interoperability) & Número de cobros registrados una sola vez con ID e importe correctos y tiempo hasta recibir confirmación. & Cobros y segundos & 100/100 cobros válidos; cada uno registrado una sola vez, con ID e importe correctos; 0 pérdidas o duplicados; confirmación $\leq$ 30 s. Probar 450/día solo si se confirma 1 cobro por cita. & Al enviar 100 cobros válidos por los servicios web del proveedor, cada uno deberá registrarse una sola vez con identificador e importe correctos y confirmarse en $\leq$ 30 s, sin pérdidas ni duplicados. La emisión de facturas queda fuera del alcance. Si se confirma un cobro por cita, probar además 450 solicitudes diarias. \\ \hline
+\end{longtable}
+\endgroup
+\section*{3. Discrepancias con el compa\~nero}
+Se compararon las respuestas de Basurto Jordan con las de Jonathan Holguín. En cada fila se registra la diferencia identificada, el argumento y la decisión adoptada.
+
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{8cm}>{\raggedright\arraybackslash}p{5.3cm}}
+\rowcolor{hdr}\textbf{Código} & \textbf{Mi respuesta} & \textbf{Respuesta del compañero} & \textbf{Argumento} & \textbf{Decisión final} \\ \hline
+\endfirsthead
+\rowcolor{hdr}\textbf{Código} & \textbf{Mi respuesta} & \textbf{Respuesta del compañero} & \textbf{Argumento} & \textbf{Decisión final} \\ \hline
+\endhead
+E02 & Funcional; Producto; Sistema. & Jonathan: Funcional; Producto; Software. & El recordatorio se envía por SMS. Para que el mensaje llegue al paciente interviene la red o servicio externo de mensajería, además de la aplicación. & Sistema: el envío completo depende de la plataforma y del servicio/red SMS. \\ \hline
+E04 & Funcional; Producto; Sistema. & Jonathan: Funcional; Producto; Software. & El requisito sitúa la operación en ventanilla e identifica al recepcionista y al paciente. La guía considera a las personas como elementos que pueden formar parte del sistema. & Sistema: la operación descrita incluye explícitamente a las personas y el proceso de atención presencial. \\ \hline
+E08 & Restricción; Producto; Sistema. & Jonathan: Restricción técnica; Producto; Software. & Android 10 o superior es una condición del entorno donde se ejecuta la aplicación e incluye el sistema operativo y el teléfono, no solo el código. & Sistema: la compatibilidad se verifica en teléfonos con Android 10 o superior. \\ \hline
+E17 & Restricción legal; Producto; Software. & Jonathan: Restricción legal; Producto; Sistema. & La obligación legal alcanza todo el tratamiento de datos personales: recopilación, almacenamiento, consulta y uso, además de las responsabilidades de quienes intervienen; no se limita al código. & Sistema: el cumplimiento debe cubrir el tratamiento completo de los datos y a todos los elementos que participan. \\ \hline
+E20 & Restricción de proceso; Proceso; Sistema. & Jonathan: Restricción de proceso; Proceso; Software. & La revisión antes de integrar exige la participación de otro integrante del equipo. Por tanto, intervienen personas y una práctica de trabajo, no solamente el código fuente. & Sistema: se mantiene como requisito de proceso porque incluye la revisión humana antes de integrar cambios. \\ \hline
+\end{longtable}
+\endgroup
+\section*{Declaraci\'on de uso de IA y fuentes}
+Se us\'o un asistente de IA (Claude) como apoyo para revisar la redacci\'on de los requisitos de calidad y para explorar formas de medirlos, tomando como referencia las definiciones de la norma ISO/IEC 25010:2023 (caracter\'isticas y subcaracter\'isticas del modelo de calidad del producto). Las clasificaciones, las justificaciones y las decisiones finales son del estudiante; la terminolog\'ia de las columnas de calidad se unific\'o con el formato <<espa\~nol (ingl\'es)>> de la norma.
+
+\textbf{Fuentes:} ISO/IEC 25010:2023, \emph{Systems and software engineering --- Systems and software Quality Requirements and Evaluation (SQuaRE) --- Product quality model}, 2.\textordmasculine{} ed. \textperiodcentered{} IEEE/ISO/IEC 29148:2018, \emph{Requirements engineering}.
+
+\end{document}
