@@ -8,6 +8,9 @@ Repositorio personal de Ingeniería de Requerimientos (ISR-401), UTEQ.
 
 ## Cómo compilar FORM-TL-01
 - Archivo principal: `FORM-TL-01/main.tex`
-- Compilador: (se completa después de compilar)
-- Comandos, en orden: (se completa después de compilar)
-- Dependencias: (se completa después de compilar)
+- Compilador: pdfLaTeX (el predeterminado de Overleaf, TeX Live)
+- Comandos, en orden:
+  1. `cd FORM-TL-01`
+  2. `pdflatex main.tex`
+  3. `pdflatex main.tex` (segunda pasada para pie de página y referencias)
+- Dependencias (paquetes LaTeX): inputenc, fontenc, babel (spanish), geometry, longtable, array, xcolor (table), fancyhdr, hyperref
