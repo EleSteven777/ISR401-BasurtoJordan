@@ -19,5 +19,5 @@ Repositorio personal de Ingeniería de Requerimientos (ISR-401), UTEQ.
   2. `bibtex main`
   3. `pdflatex main.tex`
   4. `pdflatex main.tex`
-- Dependencias (paquetes LaTeX): inputenc, fontenc, babel (spanish), geometry, graphicx, longtable, array, xcolor (table), fancyhdr, hyperref, caption, IEEEtran (estilo bibliográfico)
+- Dependencias (paquetes LaTeX): inputenc, fontenc, babel (spanish), geometry, graphicx, longtable, array, xcolor (table), fancyhdr, hyperref, caption, pdflscape, enumitem, IEEEtran (estilo bibliográfico)
 
