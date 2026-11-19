@@ -21,3 +21,14 @@ Repositorio personal de Ingeniería de Requerimientos (ISR-401), UTEQ.
   4. `pdflatex main.tex`
 - Dependencias (paquetes LaTeX): inputenc, fontenc, babel (spanish), geometry, graphicx, longtable, array, xcolor (table), fancyhdr, hyperref, caption, pdflscape, enumitem, IEEEtran (estilo bibliográfico)
 
+## Cómo compilar EV-PRAC-01
+
+Transcripción fiel de la evaluación escrita a mano el 18-11-2026 (caso FRÍOVAC).
+
+- Carpeta: `EV-PRAC-01/`
+- Archivo principal: `EV-PRAC-01/main.tex`
+- Compilador: pdfLaTeX (en Overleaf, menú Compiler → pdfLaTeX)
+- Orden de comandos: `pdflatex main.tex` (ejecutarlo dos veces)
+- Paquetes: babel (spanish), geometry, array, longtable, graphicx, enumitem
+- Las fotografías de las hojas están en `EV-PRAC-01/evidencias/` (hoja-01.jpg, hoja-02.jpg, hoja-03.jpg) y se incluyen en el anexo del PDF.
+
